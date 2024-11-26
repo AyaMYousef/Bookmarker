@@ -1,0 +1,21 @@
+.btn-outline-danger {
+    background-color: red;
+    color: white;
+}
+
+.btn-outline-danger:hover {
+    background-color: white;
+    color: red;
+}
+
+
+.btn-outline-info {
+    background-color: #0dcaf0;
+    ;
+    color: white;
+}
+
+.btn-outline-info:hover {
+    background-color: white;
+    color: #0dcaf0;
+}

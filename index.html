@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>BookMarker</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <script src="./javascript/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-r2GZGnRlzkAWUejhOD4r6pDEe0ZqlRQOm14enEJPMHgpmYOxzVsiwufXZZ95lfkF" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+            <h1 class="py-2 m-5 position-relative border-bottom dotted ">Bookmarker</h1>
+        </div>
+        <div class="container w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+            <h2>
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="site-name w-100 d-flex flex-column justify-content-center">
+                <label for="bookMarkName" class="pb-2 fw-semibold">
+                    <i class="fa-solid fa-book-bookmark pe-2"></i>
+                    Site Name</label>
+                <input type="text" placeholder="Bookmark Name" class="form-control" id="bookMarkName"
+                    oninput="regexValidation(this)">
+                <div class="alert alert-danger my-3 py-1 d-none">Must Contain at least 3 chars</div>
+
+            </div>
+
+            <div class="site-url w-100 d-flex flex-column justify-content-center">
+                <label for="bookMarkURL" class="pb-2 fw-semibold">
+                    <i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                <input type="url" placeholder="Website URL" class="form-control" id="bookMarkURL"
+                    oninput="regexValidation(this)">
+                <div class="alert alert-danger my-3 py-1 d-none">Must be a valid URL</div>
+
+            </div>
+
+            <button class="btn btn-success w-75" px-5" id="submitBtn" onclick="addSite()">Submit</button>
+        </div>
+
+    </header>
+    <!--Display-->
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-md-12 col-sm-12">
+                <div class="item">
+                    <table class="table mt-4 text-center bg-light">
+                        <thead>
+                            <tr>
+                                <th class="text-capitalize">index</th>
+                                <th class="text-capitalize">Website Name</th>
+                                <th class="text-capitalize">Visit</th>
+                                <th class="text-capitalize">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableContent">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Site Modal -->
+    <div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="validationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="validationModalLabel">Validation Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Site Name or URL is not valid. Please follow the rules below:
+                    <ul>
+                        <li>Site name must contain at least 3 characters.</li>
+                        <li>Site URL must be a valid one.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./javascript/script.js"></script>
+</body>
+
+</html>
